@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("https://st2.depositphotos.com/4428871/9876/i/950/depositphotos_98762866-stock-photo-calories-word-cloud-fitness.jpg");
+            background-color: #cccccc;
+        }
+        
+        form {
+            color: white;
+            border: 2px;
+            border-color: white;
+        }
+        
+        input {
+            width: 100%;
+            padding: 6px 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        
+        p {
+            width: 13%;
+            color: whitesmoke;
+            background-color: black;
+            text-align: center;
+            text-shadow: 2px 2px red
+        }
+    </style>
+    <title>TransformToSaiyan</title>
+
+</head>
+
+<body>
+
+    <form action="#">
+        <label></label><br>
+        <input type="radio" id="gender" name="gender" value="masc" checked><br>
+        <input type="radio" id="gender" name="gender" value="fem"> <br> Age:
+        <br>
+
+        <input type="number" id="age" placeholder="age in years"><br> Height:
+
+        <br>
+        <input type="number" id="height" placeholder="height in cm"><br> Weight:
+        <br>
+
+        <input type="number" id="weigth" placeholder="weight in kg"><br>
+    </form>
+    <br>
+
+    <button type="submit" onclick="" class="btn btn-danger">Submit</button>
+    <br><br>
+    <p id="lblResult">BMR</p>
+
+
+    <script>
+        var bmr;
+
+
+
+        function calc() {
+            var age = document.getElementById("age").value;
+            var gender = document.getElementById("gender").value;
+            var height = document.getElementById("height").value;
+            var weigth = document.getElementById("weigth").value;
+            if (gender == "masc") {
+                bmr = 66.5 + (13.75 * weigth) + (5.003 * height) - (6.755 * age);
+            } else {
+                bmr = 655.1 + (9.563 * weigth) + (1.850 * height) - (4.676 * age);
+            }
+        }
+
+
+
+
+        document.getElementsByTagName("button")[0].addEventListener("click", function() {
+            calc();
+            document.getElementById('lblResult').innerHTML = bmr;
+
+        })
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>
